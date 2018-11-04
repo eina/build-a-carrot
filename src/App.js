@@ -3,6 +3,7 @@ import './App.css';
 
 import types from './carrot-types';
 import styles from './carrot-style';
+import leaves from './leaf-style';
 
 class App extends Component {
   constructor(props) {
@@ -10,16 +11,21 @@ class App extends Component {
 
     this.state = {
       selectedType: null,
-      selectedStyle: {}
+      selectedStyle: {},
+      leafColour: {}
     }
   }
 
   selectAType(carrotType) {
-    this.setState({ selectedType: carrotType, selectedStyle: {} })
+    this.setState({ selectedType: carrotType, selectedStyle: {}, leafColour: {} })
   }
 
   selectAStyle(carrotStyle) {
     this.setState({ selectedStyle: carrotStyle })
+  }
+
+  selectLeafColour(leafColour) {
+    this.setState({ leafColour })
   }
 
   render() {
@@ -41,23 +47,47 @@ class App extends Component {
               )
               )}</span>
           </li>
-          {this.state.selectedType && <li>
-            <span>Pick a Body Color</span>
-            <span>
-              {Object.keys(styles).map((x, idx) => (
-                <button
-                  key={`${styles[x].name}-${idx}`}
-                  onClick={() => this.selectAStyle(styles[x].style)}
-                >
-                  {styles[x].name}
-                </button>
-              ))}
-            </span>
-          </li>}
+          {this.state.selectedType && <React.Fragment>
+            <li>
+              <span>Pick a Body Colour</span>
+              <span>
+                {Object.keys(styles).map((x, idx) => (
+                  <button
+                    key={`${styles[x].name}-${idx}`}
+                    onClick={() => this.selectAStyle(styles[x].style)}
+                  >
+                    {styles[x].name}
+                  </button>
+                ))}
+              </span>
+            </li>
+
+            <li>
+              <span>Pick a Leaf Colour</span>
+              <span>
+                {Object.keys(leaves).map((x, idx) => (
+                  <button
+                    key={`${leaves[x].name}-${idx}`}
+                    onClick={() => this.selectLeafColour(leaves[x].style)}
+                  >
+                    {leaves[x].name}
+                  </button>
+                ))}
+              </span>
+            </li>
+
+          </React.Fragment>
+          }
         </ol>
 
         <div className="svg-container">
-          {this.state.selectedType && React.cloneElement(types[this.state.selectedType].svg, { style: this.state.selectedStyle })}
+          {this.state.selectedType && React.cloneElement(
+            types[this.state.selectedType].svg,
+            { 
+              style: this.state.selectedStyle,
+              leafStyle: this.state.leafColour
+            }
+          )}
         </div>
       </div>
     );
