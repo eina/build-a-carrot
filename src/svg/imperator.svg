@@ -1,15 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg width="210mm" height="297mm" version="1.1" viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <metadata>
-    <rdf:RDF>
-      <cc:Work rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-        <dc:title/>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
+<svg viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg">
   <path d="m97.562 82.297c1.6373-2.846 5.9459-3.8528 7.6566-0.49675 0.50244 1.2443 0.10922 2.7699 0.24299 4.13 0.0486 18.523 0.19752 37.051 0.1835 55.571-0.48938 4.6426-0.97877 9.2851-1.4682 13.928-0.9563 3.1736-1.2468 6.5765-2.6727 9.5883-3.0699-9.7022-4.1993-19.886-4.3565-30.027-0.56425-17.558-0.42639-35.148 0.41427-52.693z" style="fill:none;stroke-width:.26458px;stroke:#000"/>
   <path d="m97.036 90.229c0.77894 0.13335 2.1371 0.14437 2.9293 0" style="fill:none;stroke-width:.26458px;stroke:#000"/>
   <path d="m97.036 90.229c-0.21891 2.3463 1.4067 1.8464 3.0238 1.8899" style="fill:none;stroke-width:.26458px;stroke:#000"/>
