@@ -32,11 +32,11 @@ class App extends Component {
     console.log('what is the selected carrot', this.state)
     return (
       <div className="App">
-        <h1>Build a Carrot</h1>
+        <h1>🥕 Build a Carrot 🥕</h1>
 
         <ol>
           <li>
-            <span>Pick a Type</span>
+            <span className="select-title">Pick a Type</span>
             <span>
               {Object.keys(types).map((carrot, idx) => (
                 <button
@@ -49,7 +49,7 @@ class App extends Component {
           </li>
           {this.state.selectedType && <React.Fragment>
             <li>
-              <span>Pick a Body Colour</span>
+              <span className="select-title">Pick a Body Colour</span>
               <span>
                 {Object.keys(styles).map((x, idx) => (
                   <button
@@ -63,7 +63,7 @@ class App extends Component {
             </li>
 
             <li>
-              <span>Pick a Leaf Colour</span>
+              <span className="select-title">Pick a Leaf Colour</span>
               <span>
                 {Object.keys(leaves).map((x, idx) => (
                   <button
@@ -83,11 +83,16 @@ class App extends Component {
         <div className="svg-container">
           {this.state.selectedType && React.cloneElement(
             types[this.state.selectedType].svg,
-            { 
+            {
               style: this.state.selectedStyle,
               leafStyle: this.state.leafColour
             }
           )}
+        </div>
+
+        <div className="desc">
+          <p>#codevember 3: Carrot (2018)</p>
+          <p>Made by <a href="https://eina.ca" target="_blank">Eina Onting</a></p>
         </div>
       </div>
     );

@@ -8,7 +8,7 @@ const Chantenay = ({ style, leafStyle }) => {
     ...style
   }
   let leafPathStyle = {
-    fill: 'red',
+    fill: 'none',
     strokeWidth: '.26458px',
     stroke: '#000',
     ...leafStyle

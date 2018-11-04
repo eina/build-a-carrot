@@ -2,17 +2,27 @@ body {
   text-align: center;
 }
 
-.svg-container {
-  width: 500px;
-  height: 500px;
+ol {
+  text-align: left;
+}
+
+.App {
+  width: 640px;
   margin: 2em auto;
-  padding: 1em;
+}
+
+.svg-container {
+  width: 480px;
+  height: 480px;
+  margin: 2em auto;
+  /* padding: 1em; */
   border: 2px solid;
 
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .svg-container svg {
@@ -22,6 +32,30 @@ body {
   transform: rotate(40deg);
 }
 
-.leaf {
-  fill: green !important;
+.select-title {
+  margin-right: 0.5em;
+}
+
+ol li {
+  margin-bottom: 0.5em;
+}
+
+button {
+  margin-left: 0.25em;
+  padding: 6px 12px;
+  background: #c87600;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+button:not(:disabled):active,
+button:hover,
+button:focus {
+  background: #d67d00;
+  border-color: #d67d00;
+  box-shadow: 0 0 0 .2rem rgba(179,104,0,.5);
+}
+
+.desc p {
+  margin: 0;
 }
