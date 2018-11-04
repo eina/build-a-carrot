@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Leaf from './jsx-svg/leaf';
 import types from './carrot-types';
 import styles from './carrot-style';
 
@@ -58,10 +57,7 @@ class App extends Component {
         </ol>
 
         <div className="svg-container">
-          <div className="inner-svg">
-            <Leaf />
-            {this.state.selectedType && React.cloneElement(types[this.state.selectedType].svg, { style: this.state.selectedStyle })}
-          </div>
+          {this.state.selectedType && React.cloneElement(types[this.state.selectedType].svg, { style: this.state.selectedStyle })}
         </div>
       </div>
     );
