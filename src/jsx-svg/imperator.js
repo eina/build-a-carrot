@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Imperator = (props) => {
+const Imperator = ({ style }) => {
   let pathStyle = {
     fill: 'none',
     stroke: '#000000',
-    strokeWidth: '0.26458332px'
+    strokeWidth: '0.26458332px',
+    ...style
   }
   return (
     <svg viewBox="0 0 9.2468 85.821" xmlns="http://www.w3.org/2000/svg">

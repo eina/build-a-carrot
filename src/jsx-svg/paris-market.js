@@ -1,10 +1,11 @@
 import React from 'react';
 
-const ParisMarket = (props) => {
+const ParisMarket = ({ style }) => {
   let pathStyle = {
     fill: 'none',
     stroke: '#000000',
-    strokeWidth: '0.26458332px'
+    strokeWidth: '0.26458332px',
+    ...style
   }
   return (
     <svg version="1.1" viewBox="0 0 12.514 11.968" xmlns="http://www.w3.org/2000/svg">

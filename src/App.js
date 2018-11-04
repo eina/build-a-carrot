@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Leaf from './jsx-svg/leaf';
 import types from './carrot-types';
+import styles from './carrot-style';
 
 class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      selectedType: null
+      selectedType: null,
+      selectedStyle: {}
     }
   }
 
   selectAType(carrotType) {
-    this.setState({ selectedType: carrotType })
+    this.setState({ selectedType: carrotType, selectedStyle: {} })
+  }
+
+  selectAStyle(carrotStyle) {
+    this.setState({ selectedStyle: carrotStyle })
   }
 
   render() {
@@ -22,22 +29,40 @@ class App extends Component {
       <div className="App">
         <h1>Build a Carrot</h1>
 
-        <div>
-          {Object.keys(types).map((carrot, idx) => (
-            <button
-              key={`${types[carrot].name}-${idx}`}
-              onClick={() => this.selectAType(carrot)}
-            >
-              {types[carrot].name}</button>
-          )
-          )}
-        </div>
+        <ol>
+          <li>
+            <span>Pick a Type</span>
+            <span>
+              {Object.keys(types).map((carrot, idx) => (
+                <button
+                  key={`${types[carrot].name}-${idx}`}
+                  onClick={() => this.selectAType(carrot)}
+                >
+                  {types[carrot].name}</button>
+              )
+              )}</span>
+          </li>
+          {this.state.selectedType && <li>
+            <span>Pick a Body Color</span>
+            <span>
+              {Object.keys(styles).map((x, idx) => (
+                <button
+                  key={`${styles[x].name}-${idx}`}
+                  onClick={() => this.selectAStyle(styles[x].style)}
+                >
+                  {styles[x].name}
+                </button>
+              ))}
+            </span>
+          </li>}
+        </ol>
 
-        {this.state.selectedType && (
-          <div className="svg-container">
-            {types[this.state.selectedType].svg}
+        <div className="svg-container">
+          <div className="inner-svg">
+            <Leaf />
+            {this.state.selectedType && React.cloneElement(types[this.state.selectedType].svg, { style: this.state.selectedStyle })}
           </div>
-        )}
+        </div>
       </div>
     );
   }

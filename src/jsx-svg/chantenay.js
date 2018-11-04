@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Chantenay = (props) => {
+const Chantenay = ({ style }) => {
+  console.log('style are you in the svg', style)
   let pathStyle = {
     fill: 'none',
     strokeWidth: '.26458px',
-    stroke: '#000'
+    stroke: '#000',
+    ...style
   }
   return (
     <svg viewBox="0 0 19 34.618" xmlns="http://www.w3.org/2000/svg">

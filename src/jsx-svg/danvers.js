@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Danvers = (props) => {
+const Danvers = ({ style }) => {
   let pathStyle = {
     fill: 'none', 
     stroke: '#000000', 
-    strokeWidth: '0.26458332px'
+    strokeWidth: '0.26458332px',
+    ...style
   }
   return (
     <svg viewBox="0 0 19.716 52.681" xmlns="http://www.w3.org/2000/svg">
